@@ -100,6 +100,7 @@ def create_payment_service(
         payment_code=generate_payment_code(
             db,
         ),
+        billing_id=payment.billing_id,
 
         invoice_id=payment.invoice_id,
 

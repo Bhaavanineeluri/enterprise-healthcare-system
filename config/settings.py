@@ -2,6 +2,9 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    APP_NAME: str = "Enterprise Healthcare Information System"
+    APP_VERSION: str = "1.0.0"
+
 
     DATABASE_URL: str
 

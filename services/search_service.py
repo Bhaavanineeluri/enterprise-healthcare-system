@@ -46,8 +46,10 @@ def global_search_service(
     doctors = (
         db.query(Doctor)
         .filter(
-            Doctor.full_name.ilike(
-                f"%{query}%"
+            or_(
+                Doctor.first_name.ilike(f"%{query}%"),
+                Doctor.last_name.ilike(f"%{query}%"),
+                Doctor.specialization.ilike(f"%{query}%"),
             )
         )
         .all()
@@ -62,14 +64,16 @@ def global_search_service(
             "id": doctor.id,
 
             "title":
-                doctor.full_name,
+                f"{doctor.first_name} {doctor.last_name}",
         })
 
     staff = (
         db.query(Staff)
         .filter(
-            Staff.full_name.ilike(
-                f"%{query}%"
+            or_(
+                Staff.first_name.ilike(f"%{query}%"),
+                Staff.last_name.ilike(f"%{query}%"),
+                Staff.staff_code.ilike(f"%{query}%"),
             )
         )
         .all()
@@ -84,13 +88,12 @@ def global_search_service(
             "id": employee.id,
 
             "title":
-                employee.full_name,
+                f"{employee.first_name} {employee.last_name}",
         })
-
     bills = (
         db.query(Billing)
         .filter(
-            Billing.bill_code.ilike(
+            Billing.billing_code.ilike(
                 f"%{query}%"
             )
         )
@@ -106,9 +109,8 @@ def global_search_service(
             "id": bill.id,
 
             "title":
-                bill.bill_code,
+                bill.billing_code,
         })
-
     invoices = (
         db.query(Invoice)
         .filter(
@@ -162,7 +164,7 @@ def global_search_service(
             Appointment
         )
         .filter(
-            Appointment.appointment_number.ilike(
+            Appointment.appointment_code.ilike(
                 f"%{query}%"
             )
         )
@@ -180,7 +182,7 @@ def global_search_service(
                 appointment.id,
 
             "title":
-                appointment.appointment_number,
+                appointment.appointment_code,
         })
 
     return {

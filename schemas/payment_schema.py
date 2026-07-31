@@ -19,6 +19,7 @@ class PaymentCreate(BaseModel):
     transaction_reference: Optional[str] = None
 
     remarks: Optional[str] = None
+    billing_id: int
 
 
 class PaymentUpdate(BaseModel):

@@ -90,6 +90,7 @@ def create_ambulance_service(
 
 def get_all_ambulances_service(
     db: Session,
+    current_user: User,
 ):
 
     return get_all_ambulances(db)
