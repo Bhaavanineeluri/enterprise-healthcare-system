@@ -1,0 +1,162 @@
+====================================================
+ENTERPRISE HEALTHCARE INFORMATION SYSTEM (EHIS)
+====================================================
+
+
+1. REQUIREMENT GATHERING
+
+
+Requirements collected from:
+
+
+- Hospital Administration
+- Doctors
+- Nurses
+- Reception Staff
+- Patients
+- Emergency Department
+
+
+2. REQUIREMENT DOCUMENTATION
+
+Documents Prepared:
+
+
+1. Business Requirement Document (BRD)
+
+2. Software Requirement Specification (SRS)
+
+3. Functional Requirement Document
+
+4. Non Functional Requirement Document
+
+
+
+3. FUNCTIONAL MODULE IDENTIFICATION
+
+Authentication
+
+        |
+
+        v
+
+Hospital Management
+
+        |
+
+        v
+
+Patient Management
+
+        |
+
+        v
+
+Clinical Management
+
+        |
+
+        v
+
+Emergency Management
+
+        |
+
+        v
+
+Reports and Analytics
+
+
+4. USER ROLES
+
+
+ADMIN:
+
+- Full system access
+- User management
+- Configuration management
+
+
+DOCTOR:
+
+- Patient details
+- Appointment management
+- Diagnosis
+- Treatment
+
+
+RECEPTIONIST:
+
+- Patient registration
+- Appointment scheduling
+
+
+NURSE:
+
+- Patient monitoring
+
+
+PATIENT:
+
+- Own medical information access
+
+
+
+5. TECHNOLOGY REQUIREMENTS
+
+Backend:
+
+FastAPI
+
+
+Database:
+
+MySQL
+
+
+ORM:
+
+SQLAlchemy
+
+
+Authentication:
+
+JWT
+OAuth2
+
+
+Documentation:
+
+Swagger UI
+
+6. MAIN ENTITIES
+
+
+Hospital
+
+    |
+
+Branch
+
+    |
+
+Department
+
+    |
+
+Doctor
+
+
+Patient
+
+    |
+
+Appointment
+
+    |
+
+Medical Records
+
+    |
+
+Prescription
